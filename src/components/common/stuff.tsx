@@ -28,14 +28,14 @@ function Stuff() {
 
     const FormSchema = z.object({
         username: z.string().min(2, {
-            message: "Username must be at least 2 characters.",
+            message: "Character Name must be at least 4 characters.",
         }),
     })
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            username: "clefairy",
+            username: "",
         },
     })
 
@@ -64,7 +64,7 @@ function Stuff() {
                                     <FormItem>
                                         <FormLabel>Name</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="clefair" {...field} />
+                                            <Input placeholder="clefairy" {...field} />
                                         </FormControl>
                                         <FormDescription>
                                             We will search based on above name.
